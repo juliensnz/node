@@ -1,6 +1,5 @@
-FROM node:8-slim
+FROM node:8
 
-# update
 # See https://crbug.com/795759
 RUN apt-get update && apt-get install -yq libgconf-2-4
 
@@ -39,4 +38,4 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 USER pptruser
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD [ "node" ]
+CMD [ "sudo", "node" ]
