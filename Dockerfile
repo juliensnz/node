@@ -38,4 +38,4 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 USER root
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD [ "sudo", "node" ]
+CMD [ "node" ]
